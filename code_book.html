@@ -387,11 +387,10 @@ summary {
 <li><strong>activity:</strong> Activity names as defined in the original dataset. The included values are: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING.</li>
 </ol>
 <p><strong>Output of str(dataset)</strong></p>
-<pre class="r"><code>file_path &lt;- file.path(&quot;data&quot;, &quot;HumanActivity_1_tidy.csv&quot;)
-data &lt;- read.csv(file_path)
+<pre class="r"><code>file_path &lt;- file.path(&quot;data&quot;, &quot;HumanActivity_1_tidy.txt&quot;)
+data &lt;- read.csv(file_path, sep = &quot;&quot;)
 str(data)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    10299 obs. of  82 variables:
-##  $ X                            : int  1 2 3 4 5 6 7 8 9 10 ...
+<pre><code>## &#39;data.frame&#39;:    10299 obs. of  81 variables:
 ##  $ subject                      : int  1 1 1 1 1 1 1 1 1 1 ...
 ##  $ tBodyAcc.mean.X              : num  0.289 0.278 0.28 0.279 0.277 ...
 ##  $ tBodyAcc.mean.Y              : num  -0.0203 -0.0164 -0.0195 -0.0262 -0.0166 ...
@@ -486,11 +485,10 @@ str(data)</code></pre>
 <li><strong>average:</strong> The average for the group defined by variable, activity, and subject.</li>
 </ol>
 <p><strong>Output of str(dataset)</strong></p>
-<pre class="r"><code>file_path &lt;- file.path(&quot;data&quot;, &quot;HumanActivity_2_tidy.csv&quot;)
-data &lt;- read.csv(file_path)
+<pre class="r"><code>file_path &lt;- file.path(&quot;data&quot;, &quot;HumanActivity_2_tidy.txt&quot;)
+data &lt;- read.csv(file_path, sep = &quot;&quot;)
 str(data)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    14220 obs. of  5 variables:
-##  $ X       : int  1 2 3 4 5 6 7 8 9 10 ...
+<pre><code>## &#39;data.frame&#39;:    14220 obs. of  4 variables:
 ##  $ variable: chr  &quot;fBodyAcc-mean-X&quot; &quot;fBodyAcc-mean-X&quot; &quot;fBodyAcc-mean-X&quot; &quot;fBodyAcc-mean-X&quot; ...
 ##  $ activity: chr  &quot;LAYING&quot; &quot;LAYING&quot; &quot;LAYING&quot; &quot;LAYING&quot; ...
 ##  $ subject : int  1 2 3 4 5 6 7 8 9 10 ...
