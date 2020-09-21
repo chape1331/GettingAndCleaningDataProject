@@ -75,8 +75,9 @@ clean_column_names <- gsub("[()0-9 ]+", "", selected_columns)
 names(dataset_2) <- clean_column_names
 
 # Save tidy dataset to csv file
-output_path <- file.path(base_output_folder, "HumanActivity_1_tidy.csv")
-write.csv(dataset_2, output_path)
+output_path <- file.path(base_output_folder, "HumanActivity_1_tidy.txt")
+#write.csv(dataset_2, output_path)
+write.table(dataset_2, output_path, row.names = FALSE)
 
 ##
 ## 5. From the data set in step 4, creates a second, independent tidy data set 
@@ -97,6 +98,7 @@ dataset_3 = dataset_2 %>%
             summarize(average = mean(value))
 
 # Save tidy dataset to csv file
-output_path <- file.path(base_output_folder, "HumanActivity_2_tidy.csv")
-write.csv(dataset_3, output_path)
+output_path <- file.path(base_output_folder, "HumanActivity_2_tidy.txt")
+#write.csv(dataset_3, output_path)
+write.table(dataset_3, output_path, row.names = FALSE)
 
