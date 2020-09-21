@@ -1,0 +1,58 @@
+# Code book
+
+The two datasets produced in this project are based on the data available at: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+## Dataset 1
+
+**Name:** HumanActivity_1_tidy.csv
+
+**Description:** This dataset contains data from the train and test datasets included in the downloaded dataset. 
+
+**Transformations:**
+
+1. Integrate subject (`subject_[dataset].txt`), observations (`X_[dataset].txt`) and label (`y_[dataset].txt`), for the train and test datasets.
+2. Merge train and test datasets.
+3. Add columns names obtained from `features.txt`.
+4. Select the columns for average and standard deviation. Additionally, the columns subject and activity were included.
+5. Clean column names by removing leading numbers, parentheses, and spaces.
+
+
+**Columns:**
+
+1. **subject:** Numeric ID between 1 and 30 to identify the volunteer.
+2. **Variables:** 79 variables for each observation.
+3. **activity:** Activity names as defined in the original dataset. The included values are: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING.
+
+**Output of str(dataset)**
+```{r}
+file_path <- file.path("data", "HumanActivity_1_tidy.csv")
+data <- read.csv(file_path)
+str(data)
+
+```
+
+
+## Dataset 2 
+
+**Name:** HumanActivity_2_tidy.csv
+
+**Description:** This dataset contains averages of each variable for each activity and each subject.
+
+**Columns:**
+
+1. **variable:** Variable name corresponding to the variables X to Y from the previous dataset.
+2. **activity:** Activity names as defined in the original dataset. The included values are: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING.
+3. **subject:**	Numeric ID for the volunteer which ranges between 1 and 30.
+4. **average:** The average for the group defined by variable, activity, and subject.
+
+**Output of str(dataset)**
+```{r}
+file_path <- file.path("data", "HumanActivity_2_tidy.csv")
+data <- read.csv(file_path)
+str(data)
+
+```
+
+
+
+
